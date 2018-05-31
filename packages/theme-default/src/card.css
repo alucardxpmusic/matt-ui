@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import "./common/var.css";
+
+@component-namespace el {
+  @b card {
+    border:1px solid #e8f0f3;
+    border-radius: 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+    box-shadow:0 3px 10px 0 rgba(234,234,234,0.50);
+
+    @e header {
+      padding: calc(var(--card-padding) - 2) var(--card-padding);
+      border-bottom: 2px solid #e8f0f3;
+      box-sizing: border-box;
+      font-family: PingFangSC-Medium;
+    }
+
+    @e body {
+      padding: var(--card-padding);
+    }
+  }
+}
