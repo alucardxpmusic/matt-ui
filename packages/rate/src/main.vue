@@ -58,7 +58,7 @@
       colors: {
         type: Array,
         default() {
-          return ['#F7BA2A', '#F7BA2A', '#F7BA2A'];
+          return ['#fa995d', '#fa995d', '#fa995d'];
         }
       },
       voidColor: {

@@ -1,6 +1,6 @@
 {
   "name": "matt-ui",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "A Component Library for Vue.js.",
   "main": "lib/matt-ui.common.js",
   "files": [
@@ -26,7 +26,8 @@
     "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh && sh build/deploy-faas.sh",
     "pub:all": "npm run dist:all && lerna publish --skip-git && git commit -am 'publish independent packages' && git push eleme dev",
     "test": "npm run lint && cross-env CI_ENV=/dev/ karma start test/unit/karma.conf.js --single-run",
-    "test:watch": "karma start test/unit/karma.conf.js"
+    "test:watch": "karma start test/unit/karma.conf.js",
+    "prepublish": "npm run dist"
   },
   "faas": {
     "domain": "element",

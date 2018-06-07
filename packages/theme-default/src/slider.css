@@ -8,9 +8,9 @@
     @utils-clearfix;
     @e runway {
       width: 100%;
-      height: var(--slider-height);
+      height: 10px;
       margin: var(--slider-margin);
-      background-color: var(--slider-runway-background-color);
+      background-color: #87cfff;
       border-radius: var(--slider-border-radius);
       position: relative;
       cursor: pointer;
@@ -64,15 +64,16 @@
     }
 
     @e bar {
-      height: var(--slider-height);
-      background-color: var(--slider-main-background-color);
+      height: 10px;
+      background-color: #18a0fb;
       border-top-left-radius: var(--slider-border-radius);
       border-bottom-left-radius: var(--slider-border-radius);
       position: absolute;
     }
 
     @e button-wrapper {
-      size: var(--slider-button-wrapper-size);
+      width: 40px;
+      height: 40px;
       position: absolute;
       z-index: 1001;
       top: var(--slider-button-wrapper-offset);
@@ -98,17 +99,19 @@
     }
 
     @e button {
-      size: var(--slider-button-size);
-      background-color: var(--slider-main-background-color);
+      width: 22px;
+      height: 22px;
+      background-color: #ffffff;
       border-radius: 50%;
       transition: .2s;
       user-select: none;
+      box-shadow:0 2px 6px 0 rgba(0,0,0,0.20);
 
       &:hover,
       &.hover,
       &.dragging {
         transform: scale(1.5);
-        background-color: var(--slider-button-hover-color);
+        background-color: #ffffff;
       }
 
       &:hover,
@@ -123,9 +126,10 @@
 
     @e stop {
       position: absolute;
-      size: var(--slider-height);
+      width: 10px;
+      height: 10px;
       border-radius: var(--border-radius-circle);
-      background-color: var(--slider-stop-background-color);
+      background-color: #11b95c;
       transform: translateX(-50%);
     }
 
