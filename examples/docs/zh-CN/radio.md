@@ -21,6 +21,13 @@
   <el-radio-button label="深圳"></el-radio-button>
 </el-radio-group>
 
+## checkbox 样式
+<el-radio-group v-model="radio2" custom-class="checkbox">
+  <el-radio :label="3">备选项</el-radio>
+  <el-radio :label="6">备选项</el-radio>
+  <el-radio :label="9">备选项</el-radio>
+</el-radio-group>
+
 ## Radio 单选框
 
 在一组备选项中进行单选

@@ -1,5 +1,5 @@
 <template>
-  <div class="el-radio-group">
+  <div :class="'el-'+customClass+'-group'">
     <slot></slot>
   </div>
 </template>
@@ -18,7 +18,13 @@
       size: String,
       fill: String,
       textColor: String,
-      disabled: Boolean
+      disabled: Boolean,
+      customClass: {
+        type: String,
+        default() {
+          return 'radio';
+        }
+      }
     },
     watch: {
       value(value) {

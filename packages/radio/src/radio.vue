@@ -1,15 +1,16 @@
 <template>
-  <label class="el-radio">
-    <span class="el-radio__input"
-      :class="{
-        'is-disabled': isDisabled,
-        'is-checked': model === label,
-        'is-focus': focus
-      }"
+  <label :class="'el-'+customClass">
+    <span
+      :class="[
+        isDisabled?'is-disabled':'',
+        model === label?'is-checked':'',
+        focus?'is-focus':'',
+        'el-'+customClass+'__input'
+      ]"
     >
-      <span class="el-radio__inner"></span>
+      <span :class="'el-'+customClass+'__inner'"></span>
       <input
-        class="el-radio__original"
+        :class="'el-'+customClass+'__original'"
         :value="label"
         type="radio"
         v-model="model"
@@ -18,7 +19,7 @@
         :name="name"
         :disabled="isDisabled">
     </span>
-    <span class="el-radio__label">
+    <span :class="'el-'+customClass+'__label'">
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -43,7 +44,8 @@
 
     data() {
       return {
-        focus: false
+        focus: false,
+        customClass: this.$parent.customClass
       };
     },
 
