@@ -25,7 +25,6 @@
         cursor: default;
 
         .el-slider__bar, .el-slider__button {
-          background-color: var(--slider-disable-color);
         }
 
         .el-slider__button-wrapper {
