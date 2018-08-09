@@ -62,12 +62,14 @@
   }
 </style>
 
-<el-tag :ribbon="true">标签一</el-tag>
+<div style="background:gray;padding:20px;">
+  <el-tag :ribbon="true">标签一</el-tag>
 <el-tag :ribbon="true" type="gray">标签二</el-tag>
 <el-tag :ribbon="true" type="primary">标签三</el-tag>
 <el-tag :ribbon="true" type="success">标签四</el-tag>
 <el-tag :ribbon="true" type="warning">标签五</el-tag>
 <el-tag :ribbon="true" type="danger">标签六</el-tag>
+</div>
 
 ## Tag 标签
 

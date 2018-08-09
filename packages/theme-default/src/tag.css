@@ -82,7 +82,7 @@
       }
     }
     @m primary {
-      background-color: var(--tag-primary-fill);
+      background-color: #e8f4ff;
       border-color: var(--tag-primary-border);
       color: var(--tag-primary-color);
       @when hit {
@@ -128,7 +128,7 @@
       }
     }
     @m warning {
-      background-color: var(--tag-warning-fill);
+      background-color: #fef7e9;
       border-color: var(--tag-warning-border);
       color: var(--tag-warning-color);
       @when hit {
