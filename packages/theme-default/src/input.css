@@ -21,10 +21,10 @@
       font-size: inherit;
       font-weight: 200;
       font-family:PingFangSC-Regular;
-      height: var(--input-height);
+      height: 44px;
       line-height: 1;
       outline: none;
-      padding: 21px 10px;
+      padding: 0 10px;
       transition: var(--border-transition-base);
       width: 100%;
 
