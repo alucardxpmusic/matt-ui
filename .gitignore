@@ -13,4 +13,5 @@ fe.element/matt-ui
 coverage
 waiter.config.js
 build/bin/algolia-key.js
-lib
+/lib
+/packages/theme-default/lib
