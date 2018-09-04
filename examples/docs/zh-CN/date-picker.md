@@ -187,6 +187,7 @@
   <el-date-picker
     v-model="value4"
     type="month"
+    size="mini"
     placeholder="选择月">
   </el-date-picker>
 </div>
