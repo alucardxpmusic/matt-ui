@@ -2,6 +2,7 @@
   export default {
     data() {
       return {
+        value0: 30,
         value1: 0,
         value2: 50,
         value3: 36,
@@ -60,6 +61,10 @@
 :::demo 通过设置绑定值自定义滑块的初始值
 ```html
 <template>
+  <div class="block">
+    <span class="demonstration">最小拖动</span>
+    <el-slider v-model="value0" :min-slide="30"></el-slider>{{value0}}
+  </div>
   <div class="block">
     <span class="demonstration">默认</span>
     <el-slider v-model="value1"></el-slider>

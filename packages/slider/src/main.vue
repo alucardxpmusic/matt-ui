@@ -23,6 +23,10 @@
         class="el-slider__bar"
         :style="barStyle">
       </div>
+      <div
+        class="el-slider__bar"
+        :style="'width: '+minSlideSize+';background:#1696fa;border-radius: 3px;'">
+      </div>
       <slider-button
         :vertical="vertical"
         v-model="firstValue"
@@ -56,6 +60,10 @@
 
     props: {
       min: {
+        type: Number,
+        default: 0
+      },
+      minSlide: {
         type: Number,
         default: 0
       },
@@ -280,6 +288,10 @@
           : `${ 100 * (this.firstValue - this.min) / (this.max - this.min) }%`;
       },
 
+      minSlideSize() {
+        return (this.minSlide - this.minValue) * 100 / (this.max - this.min) + '%';
+      },
+
       barStart() {
         return this.range
           ? `${ 100 * (this.minValue - this.min) / (this.max - this.min) }%`
@@ -302,10 +314,12 @@
         return this.vertical
           ? {
             height: this.barSize,
-            bottom: this.barStart
+            bottom: this.barStart,
+            'background-color': this.minSlide ? '#91d1ff' : '#18a0fb'
           } : {
             width: this.barSize,
-            left: this.barStart
+            left: this.barStart,
+            'background-color': this.minSlide ? '#91d1ff' : '#18a0fb'
           };
       }
     },
