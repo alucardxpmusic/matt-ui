@@ -235,12 +235,18 @@
       onSliderClick(event) {
         if (this.disabled || this.dragging) return;
         this.resetSize();
+        let newPosition;
         if (this.vertical) {
           const sliderOffsetBottom = this.$refs.slider.getBoundingClientRect().bottom;
-          this.setPosition((sliderOffsetBottom - event.clientY) / this.sliderSize * 100);
+          newPosition = (sliderOffsetBottom - event.clientY) / this.sliderSize * 100;
         } else {
           const sliderOffsetLeft = this.$refs.slider.getBoundingClientRect().left;
-          this.setPosition((event.clientX - sliderOffsetLeft) / this.sliderSize * 100);
+          newPosition = (event.clientX - sliderOffsetLeft) / this.sliderSize * 100;
+        }
+        if (newPosition < (this.minSlide - this.min) / (this.max - this.min) * 100) {
+          return;
+        } else {
+          this.setPosition(newPosition);
         }
       },
 

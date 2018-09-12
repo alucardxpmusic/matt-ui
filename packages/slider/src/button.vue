@@ -138,11 +138,6 @@
         }
         this.startPosition = parseFloat(this.currentPosition);
         this.newPosition = this.startPosition;
-        if (this.newPosition < this.minSlide) {
-          window.removeEventListener('mousemove', this.onDragging);
-          this.setPosition(this.minSlide);
-          return;
-        }
       },
 
       onDragging(event) {
@@ -158,9 +153,10 @@
             diff = (this.currentX - this.startX) / this.$parent.sliderSize * 100;
           }
           this.newPosition = this.startPosition + diff;
-          if (this.newPosition < this.minSlide) {
+
+          if (this.newPosition < (this.minSlide - this.min) / (this.max - this.min) * 100) {
             window.removeEventListener('mousemove', this.onDragging);
-            this.setPosition(this.minSlide);
+            this.setPosition((this.minSlide - this.min) / (this.max - this.min) * 100);
             return;
           }
           this.setPosition(this.newPosition);
@@ -176,8 +172,9 @@
           setTimeout(() => {
             this.dragging = false;
             this.hideTooltip();
-            if (this.newPosition < this.minSlide) {
-              this.setPosition(this.minSlide);
+            if (this.newPosition < (this.minSlide - this.min) / (this.max - this.min) * 100) {
+              window.removeEventListener('mousemove', this.onDragging);
+              this.setPosition((this.minSlide - this.min) / (this.max - this.min) * 100);
               return;
             }
             this.setPosition(this.newPosition);

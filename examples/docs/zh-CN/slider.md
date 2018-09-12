@@ -2,7 +2,7 @@
   export default {
     data() {
       return {
-        value0: 30,
+        value0: 3000,
         value1: 0,
         value2: 50,
         value3: 36,
@@ -63,7 +63,7 @@
 <template>
   <div class="block">
     <span class="demonstration">最小拖动</span>
-    <el-slider v-model="value0" :min-slide="30"></el-slider>{{value0}}
+    <el-slider v-model="value0" :max="16600" :min-slide="3000"></el-slider>{{value0}}
   </div>
   <div class="block">
     <span class="demonstration">默认</span>
